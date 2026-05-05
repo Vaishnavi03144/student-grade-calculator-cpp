@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string name;
+    int subjects;
+    float marks, total = 0, average;
+
+    cout << "Enter student name: ";
+    getline(cin, name);
+
+    cout << "Enter number of subjects: ";
+    cin >> subjects;
+
+    for(int i = 1; i <= subjects; i++) {
+        cout << "Enter marks for subject " << i << ": ";
+        cin >> marks;
+        total += marks;
+    }
+
+    average = total / subjects;
+
+    cout << "\n--- Result ---\n";
+    cout << "Name: " << name << endl;
+    cout << "Total Marks: " << total << endl;
+    cout << "Average: " << average << endl;
+
+    if(average >= 90)
+        cout << "Grade: A" << endl;
+    else if(average >= 75)
+        cout << "Grade: B" << endl;
+    else if(average >= 50)
+        cout << "Grade: C" << endl;
+    else
+        cout << "Grade: Fail" << endl;
+
+    return 0;
+}
